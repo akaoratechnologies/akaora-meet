@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#06162a" />
+  <title>Akaora Meet</title>
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="preconnect" href="https://www.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="styles.css?v=20260628-controls-gap" />
+</head>
+<body>
+  <div class="bg-blur bg-blur-one"></div>
+  <div class="bg-blur bg-blur-two"></div>
+  <div class="bg-grid"></div>
+
+
+  <main class="app-shell">
+    <header class="topbar frosted">
+      <a class="brand" href="./" aria-label="Akaora Meet home">
+        <img src="assets/logo.png" alt="Akaora Meet logo" class="brand-logo" />
+        <span>
+          <strong>Akaora <b>Meet</b></strong>
+          <small>Simple • Secure • Instant</small>
+        </span>
+      </a>
+      <div class="nav-actions">
+        <div class="status-chip" id="appStatus"><span></span> Starting</div>
+      <button class="theme-switch nav-theme" id="topThemeToggle" data-theme-toggle type="button" aria-label="Switch theme" title="Switch theme">
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5Z"/></svg>
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        <span>Dark</span>
+      </button>
+      </div>
+    </header>
+
+    <section id="homeView" class="view active home-view">
+      <div class="hero-card reveal-up">
+        <div class="hero-copy">
+          <span class="hero-pill">No Login • No Downloads • Just Meet</span>
+          <h1>Connect Instantly. <br/>Meet Effortlessly.</h1>
+          <p class="hero-text">A fast, secure and lightweight browser meeting platform. Create a room, share the link, chat with emojis, and turn on mic or camera only when you need it.</p>
+          <div class="hero-actions">
+            <button class="hero-primary" id="openCreateBtn">
+              <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+              Create a new meeting
+            </button>
+            <button class="hero-secondary" id="openJoinBtn">
+              <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/><path d="M3 12h12"/></svg>
+              Join the meeting
+            </button>
+          </div>
+          <div class="trust-row">
+            <span><i></i> Fast</span>
+            <span><i></i> Secure</span>
+            <span><i></i> Simple</span>
+            <span><i></i> For Everyone</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="orbit-ring ring-one"></div>
+          <div class="orbit-ring ring-two"></div>
+          <div class="mock-laptop">
+            <div class="mock-topbar"><span></span><span></span><span></span></div>
+            <div class="mock-video-grid">
+              <div class="mini-user blue"></div>
+              <div class="mini-user teal"></div>
+              <div class="mini-user orange"></div>
+              <div class="mini-user navy"><img src="assets/logo.png" alt="" /></div>
+            </div>
+            <div class="mock-controls">
+              <b></b><b></b><b class="end"></b>
+            </div>
+          </div>
+          <img src="assets/logo.png" alt="" class="floating-logo" />
+        </div>
+      </div>
+
+      <div class="feature-strip reveal-up delay-1">
+        <article>
+          <span class="feature-icon orange"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h8l-1 8 11-13h-8l0-7Z"/></svg></span>
+          <strong>Instant</strong>
+          <small>Start in seconds</small>
+        </article>
+        <article>
+          <span class="feature-icon blue"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-5"/></svg></span>
+          <strong>Secure</strong>
+          <small>Firebase signaling</small>
+        </article>
+        <article>
+          <span class="feature-icon teal"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+          <strong>Accessible</strong>
+          <small>Anyone can join</small>
+        </article>
+      </div>
+
+      <div class="home-panels reveal-up delay-2">
+        <section class="info-panel light-panel">
+          <p class="section-no">02</p>
+          <h2>The Problem</h2>
+          <p>Traditional meeting platforms can feel heavy, confusing, and full of setup friction.</p>
+          <ul class="soft-list">
+            <li><svg viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg> Require sign-ups and accounts</li>
+            <li><svg viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg> Complex setup before joining</li>
+            <li><svg viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg> Not lightweight for all devices</li>
+          </ul>
+        </section>
+        <section class="info-panel light-panel solution-panel">
+          <p class="section-no">03</p>
+          <h2>Our Solution</h2>
+          <p>Akaora Meet keeps the meeting flow clean: create, share, join and start talking.</p>
+          <ul class="soft-list check-list">
+            <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> Create meeting in one click</li>
+            <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> Share link or room code</li>
+            <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg> Live chat with emoji picker</li>
+          </ul>
+        </section>
+      </div>
+
+      <section class="how-panel reveal-up delay-3">
+        <div>
+          <p class="section-no">05</p>
+          <h2>How It Works</h2>
+        </div>
+        <div class="steps-row">
+          <article><span>1</span><strong>Enter Name</strong><small>Add your name to continue</small></article>
+          <article><span>2</span><strong>Create or Join</strong><small>Make a room or enter code</small></article>
+          <article><span>3</span><strong>Set Permissions</strong><small>Mic/camera stay optional</small></article>
+          <article><span>4</span><strong>Share & Chat</strong><small>Send room link and emojis</small></article>
+          <article><span>5</span><strong>Start Meeting</strong><small>Connect in browser</small></article>
+        </div>
+      </section>
+
+      <footer class="home-footer reveal-up delay-3">
+        <div>
+          <strong>Akaora Meet</strong>
+          <span>© 2026 Akaora Technologies. All rights reserved.</span>
+        </div>
+        <div>
+          <span>Developed by <b>Akshay Goyal</b></span>
+          <span>Company: <b>Akaora Technologies</b></span>
+        </div>
+      </footer>
+    </section>
+
+    <section id="createView" class="view form-view">
+      <button class="back-btn" data-back-home>
+        <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+        Back
+      </button>
+      <div class="form-card card-white reveal-up">
+        <div class="form-heading">
+          <p class="eyebrow">Create Meeting</p>
+          <h2>Start your meeting</h2>
+          <p>Enter your name, choose optional mic/camera permissions, then create the room.</p>
+        </div>
+
+        <div class="field-group">
+          <label for="createNameInput">Your name</label>
+          <input id="createNameInput" type="text" maxlength="32" autocomplete="name" placeholder="Enter your name" />
+        </div>
+
+        <div class="generated-room soft-card">
+          <span>Generated room code</span>
+          <strong id="generatedRoomCode">------</strong>
+          <button id="regenerateCodeBtn" class="mini-btn" type="button">
+            <svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v6h-6"/></svg>
+            New code
+          </button>
+        </div>
+
+        <div class="permission-title">Optional permissions</div>
+        <div class="media-options">
+          <button class="toggle-pill" id="createMicToggle" data-enabled="false" type="button">
+            <svg viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 1 0-6 0v5a3 3 0 0 0 3 3Z"/><path d="M19 11a7 7 0 0 1-14 0"/><path d="M12 18v4"/><path d="M8 22h8"/></svg>
+            <span>Mic off</span>
+          </button>
+          <button class="toggle-pill" id="createCameraToggle" data-enabled="false" type="button">
+            <svg viewBox="0 0 24 24"><path d="M4 7a3 3 0 0 1 3-3h7a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3Z"/><path d="M17 9l4-2v10l-4-2"/></svg>
+            <span>Camera off</span>
+          </button>
+        </div>
+
+        <button id="createNowBtn" class="primary-action" disabled>
+          <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+          Create Meeting Now
+        </button>
+      </div>
+    </section>
+
+    <section id="joinView" class="view form-view">
+      <button class="back-btn" data-back-home>
+        <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+        Back
+      </button>
+      <div class="form-card card-white reveal-up">
+        <div class="form-heading">
+          <p class="eyebrow">Join Meeting</p>
+          <h2>Enter meeting details</h2>
+          <p>Paste the invite link or room code. Wrong codes will show a clear message only after you try to join.</p>
+        </div>
+
+        <div id="invalidRoomAlert" class="error-card" hidden>
+          <strong>Invalid Room Code</strong>
+          <span>The room code you entered is invalid. Please check the room code and try again.</span>
+        </div>
+
+        <div class="field-group">
+          <label for="joinNameInput">Your name</label>
+          <input id="joinNameInput" type="text" maxlength="32" autocomplete="name" placeholder="Enter your name" />
+        </div>
+
+        <div class="field-group">
+          <label for="roomCodeInput">Room code or invite link</label>
+          <input id="roomCodeInput" type="text" inputmode="text" autocomplete="off" placeholder="Example: AKR8H2KQ or paste invite link" />
+        </div>
+
+        <div class="permission-title">Optional permissions</div>
+        <div class="media-options">
+          <button class="toggle-pill" id="joinMicToggle" data-enabled="false" type="button">
+            <svg viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 1 0-6 0v5a3 3 0 0 0 3 3Z"/><path d="M19 11a7 7 0 0 1-14 0"/><path d="M12 18v4"/><path d="M8 22h8"/></svg>
+            <span>Mic off</span>
+          </button>
+          <button class="toggle-pill" id="joinCameraToggle" data-enabled="false" type="button">
+            <svg viewBox="0 0 24 24"><path d="M4 7a3 3 0 0 1 3-3h7a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3Z"/><path d="M17 9l4-2v10l-4-2"/></svg>
+            <span>Camera off</span>
+          </button>
+        </div>
+
+        <button id="joinNowBtn" class="primary-action" disabled>
+          <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/><path d="M3 12h12"/></svg>
+          Join Meeting Now
+        </button>
+      </div>
+    </section>
+
+    <section id="meetingView" class="view meeting-view">
+      <div class="meeting-top frosted">
+        <div class="meeting-hud-left">
+          <span class="meeting-clock" id="meetingClock">--:--</span>
+          <span class="meeting-sep">|</span>
+        </div>
+        <div class="room-meta">
+          <img src="assets/logo.png" alt="Akaora logo" />
+          <div>
+            <span>Room Code</span>
+            <strong id="activeRoomCode">------</strong>
+            <small class="host-meta">Hosted by <b id="hostNameLabel">---</b></small>
+          </div>
+        </div>
+        <div class="share-actions">
+<button class="theme-switch nav-theme meeting-theme" id="meetingThemeToggle" data-theme-toggle type="button" aria-label="Switch theme" title="Switch theme">
+            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5Z"/></svg>
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            <span>Dark</span>
+          </button>
+          <button class="mini-btn" id="copyCodeBtn">
+            <svg viewBox="0 0 24 24"><path d="M9 9h10v10H9z"/><path d="M5 15H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v1"/></svg>
+            Copy code
+          </button>
+          <button class="mini-btn" id="copyInviteBtn">
+            <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            Share link
+          </button>
+        </div>
+        <div class="presentation-hud" id="presentationHud" hidden>
+          <div class="presentation-pill presenter-pill" id="presenterPill">
+            <svg viewBox="0 0 24 24"><path d="M4 5h16v10H4z"/><path d="M9 19h6"/><path d="M12 15v4"/></svg>
+            <span id="presenterPillText">You are presenting</span>
+          </div>
+          <div class="presentation-pill audio-pill" id="presentationAudioPill">
+            <span>Presentation audio</span>
+            <span class="audio-toggle on" id="presentationAudioState" aria-hidden="true"><span></span></span>
+          </div>
+          <button class="presentation-stop-btn" id="stopPresentingBtn" type="button">Stop presenting</button>
+        </div>
+      </div>
+
+      <div class="invite-card" id="inviteCard" hidden>
+        <button class="invite-card-close" id="inviteCardClose" type="button" aria-label="Close invite panel">×</button>
+        <p class="invite-card-title">Your meeting's ready</p>
+        <button class="invite-primary-btn" id="addOthersBtn" type="button">
+          <svg viewBox="0 0 24 24"><path d="M15 19a6 6 0 0 0-12 0"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg>
+          Add others
+        </button>
+        <p class="invite-card-text">Or share this meeting link with others you want in the meeting</p>
+        <div class="invite-link-box">
+          <span id="inviteLinkText">https://akaorameet.com/room</span>
+          <button type="button" id="inviteLinkCopyBtn" aria-label="Copy invite link">
+            <svg viewBox="0 0 24 24"><path d="M9 9h10v10H9z"/><path d="M5 15H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v1"/></svg>
+          </button>
+        </div>
+        <div class="invite-card-note">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+          <span>People who use this meeting link must get your permission before they can join.</span>
+        </div>
+        <small class="invite-card-user" id="inviteCardUser">Joined as Guest</small>
+      </div>
+
+      <div class="waiting-room-card card-white" id="waitingRoomCard" hidden aria-live="polite">
+        <div>
+          <strong>Someone wants to join</strong>
+          <small id="waitingRequestName">Guest</small>
+        </div>
+        <div class="waiting-room-actions">
+          <button class="mini-btn admit-btn" id="admitRequestBtn" type="button">Admit</button>
+          <button class="mini-btn deny-btn" id="denyRequestBtn" type="button">Deny</button>
+        </div>
+      </div>
+
+      <div class="call-layout">
+        <section class="stage" id="callStage">
+          <div class="video-grid" id="videoGrid">
+            <article class="video-tile remote-tile">
+              <video id="remoteVideo" autoplay playsinline></video>
+              <div class="avatar-placeholder" id="remotePlaceholder">
+                <div class="avatar-circle">A</div>
+                <p id="remoteLabel"></p>
+              </div>
+              <div class="tile-badge">
+                <svg viewBox="0 0 24 24"><path d="M4 7a3 3 0 0 1 3-3h7a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3Z"/><path d="M17 9l4-2v10l-4-2"/></svg>
+                <span>Remote</span>
+              </div>
+              <div class="hand-badge" id="remoteHandBadge" hidden>
+                <span aria-hidden="true">&#9995;</span>
+                <strong>Hand raised</strong>
+              </div>
+              <button class="tile-pin" id="remotePinBtn" data-pin-tile="remote" type="button" title="Pin remote video" aria-label="Pin remote video" aria-pressed="false">
+                <svg viewBox="0 0 24 24"><path d="M15 4.5 19.5 9"/><path d="M14.25 5.25 8.5 11l-3 1.1 6.4 6.4 1.1-3 5.75-5.75"/><path d="m9 15-5 5"/></svg>
+              </button>
+              <button class="tile-fullscreen-action" data-fullscreen-tile="remote" type="button" title="Full screen remote video" aria-label="Full screen remote video">
+                <svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M16 3h3a2 2 0 0 1 2 2v3"/><path d="M8 21H5a2 2 0 0 1-2-2v-3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+              </button>
+            </article>
+            <article class="video-tile local-tile">
+              <video id="localVideo" autoplay muted playsinline></video>
+              <div class="avatar-placeholder" id="localPlaceholder">
+                <div class="avatar-circle" id="localInitial">Y</div>
+                <p id="localLabel">You</p>
+              </div>
+              <div class="tile-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 1 0-6 0v5a3 3 0 0 0 3 3Z"/><path d="M19 11a7 7 0 0 1-14 0"/><path d="M12 18v4"/><path d="M8 22h8"/></svg>
+                <span id="localMediaState">Mic off • Camera off</span>
+              </div>
+              <div class="hand-badge" id="localHandBadge" hidden>
+                <span aria-hidden="true">&#9995;</span>
+                <strong>You raised hand</strong>
+              </div>
+              <button class="tile-pin" id="localPinBtn" data-pin-tile="local" type="button" title="Pin your video" aria-label="Pin your video" aria-pressed="false">
+                <svg viewBox="0 0 24 24"><path d="M15 4.5 19.5 9"/><path d="M14.25 5.25 8.5 11l-3 1.1 6.4 6.4 1.1-3 5.75-5.75"/><path d="m9 15-5 5"/></svg>
+              </button>
+              <button class="tile-fullscreen-action" data-fullscreen-tile="local" type="button" title="Full screen your video" aria-label="Full screen your video">
+                <svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M16 3h3a2 2 0 0 1 2 2v3"/><path d="M8 21H5a2 2 0 0 1-2-2v-3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+              </button>
+            </article>
+            <article class="video-tile screen-tile" id="screenTile" hidden>
+              <video id="screenVideo" autoplay muted playsinline></video>
+              <div class="tile-badge">
+                <svg viewBox="0 0 24 24"><path d="M3 5h18v12H3z"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+                <span>Screen sharing</span>
+              </div>
+              <button class="tile-pin" id="screenPinBtn" data-pin-tile="screen" type="button" title="Pin shared screen" aria-label="Pin shared screen" aria-pressed="false">
+                <svg viewBox="0 0 24 24"><path d="M15 4.5 19.5 9"/><path d="M14.25 5.25 8.5 11l-3 1.1 6.4 6.4 1.1-3 5.75-5.75"/><path d="m9 15-5 5"/></svg>
+              </button>
+              <button class="tile-fullscreen-action" data-fullscreen-tile="screen" type="button" title="Full screen shared screen" aria-label="Full screen shared screen">
+                <svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M16 3h3a2 2 0 0 1 2 2v3"/><path d="M8 21H5a2 2 0 0 1-2-2v-3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+              </button>
+            </article>
+          </div>
+
+          <div class="reaction-stream" id="reactionStream" aria-live="polite" aria-atomic="false"></div>
+          <div class="chat-popups" id="chatPopups" aria-live="polite" aria-atomic="false"></div>
+          <div class="reaction-panel" id="reactionPanel" hidden aria-label="Send a reaction">
+            <button type="button" data-reaction="thumbsUp" aria-label="Send thumbs up reaction"><span aria-hidden="true">&#128077;</span></button>
+            <button type="button" data-reaction="clap" aria-label="Send clap reaction"><span aria-hidden="true">&#128079;</span></button>
+            <button type="button" data-reaction="heart" aria-label="Send heart reaction"><span aria-hidden="true">&#10084;&#65039;</span></button>
+            <button type="button" data-reaction="laugh" aria-label="Send laugh reaction"><span aria-hidden="true">&#128514;</span></button>
+            <button type="button" data-reaction="party" aria-label="Send celebration reaction"><span aria-hidden="true">&#127881;</span></button>
+            <button type="button" data-reaction="check" aria-label="Send check reaction"><span aria-hidden="true">&#9989;</span></button>
+          </div>
+
+          <div class="call-controls frosted" aria-label="Call controls">
+            <button class="control-btn mic-control off" id="micBtn" title="Turn microphone on/off" aria-label="Microphone off">
+              <svg class="icon-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 1 0-6 0v5a3 3 0 0 0 3 3Z"/><path d="M19 11a7 7 0 0 1-14 0"/><path d="M12 18v4"/><path d="M8 22h8"/></svg>
+              <svg class="icon-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14a3 3 0 0 0 3-3V6"/><path d="M9.4 5.4A3 3 0 0 1 15 6v5"/><path d="M5 11a7 7 0 0 0 10.4 6.1"/><path d="M19 11a7 7 0 0 1-1.2 3.9"/><path d="M12 18v4"/><path d="M8 22h8"/><path d="M3 3l18 18"/></svg>
+              <span class="sr-only">Mic</span>
+            </button>
+            <button class="control-btn camera-control off" id="cameraBtn" title="Turn camera on/off" aria-label="Camera off">
+              <svg class="icon-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7a3 3 0 0 1 3-3h7a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3Z"/><path d="M17 9l4-2v10l-4-2"/></svg>
+              <svg class="icon-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7a3 3 0 0 1 3-3h7"/><path d="M17 9l4-2v10l-4-2"/><path d="M17 14v3a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V8"/><path d="M3 3l18 18"/></svg>
+              <span class="sr-only">Camera</span>
+            </button>
+            <button class="control-btn screen-control" id="screenBtn" title="Share screen" aria-label="Share screen">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v12H3z"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+              <span class="sr-only">Screen share</span>
+            </button>
+            <button class="control-btn device-control" id="deviceBtn" title="Choose mic and camera devices" aria-label="Choose mic and camera devices">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6l-.09.09a2 2 0 0 1-3.42-1.42v-.08A1.7 1.7 0 0 0 9 17.4a1.7 1.7 0 0 0-1.88.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 13a1.7 1.7 0 0 0-.6-1l-.09-.09A2 2 0 0 1 5.33 8.5h.08A1.7 1.7 0 0 0 6.6 7a1.7 1.7 0 0 0-.34-1.88l-.06-.06A2 2 0 1 1 9.03 2.23l.06.06A1.7 1.7 0 0 0 11 2.6a1.7 1.7 0 0 0 1-.6l.09-.09A2 2 0 0 1 15.5 3.33v.08A1.7 1.7 0 0 0 17 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 21.4 9c.06.38.27.74.6 1l.09.09A2 2 0 0 1 20.67 13.5h-.08A1.7 1.7 0 0 0 19.4 15Z"/></svg>
+              <span class="sr-only">Devices</span>
+            </button>
+            <button class="control-btn chat-control" id="chatToggleBtn" title="Open chat" aria-label="Open chat">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-8 8H6l-4 3 1.3-5.2A8 8 0 1 1 21 12Z"/></svg>
+              <span class="chat-badge" id="chatUnreadBadge" hidden>0</span>
+              <span class="sr-only">Chat</span>
+            </button>
+            <button class="control-btn reaction-control" id="reactionBtn" title="Send reaction" aria-label="Open reactions" aria-expanded="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg>
+              <span class="sr-only">Reactions</span>
+            </button>
+            <button class="control-btn hand-control" id="handBtn" title="Raise hand" aria-label="Raise hand" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-4 0v4"/><path d="M14 10V4a2 2 0 1 0-4 0v8"/><path d="M10 12V6a2 2 0 1 0-4 0v9"/><path d="M6 15v-3a2 2 0 1 0-4 0v3a8 8 0 0 0 16 0v-4a2 2 0 1 0-4 0"/></svg>
+              <span class="sr-only">Raise hand</span>
+            </button>
+            <button class="control-btn more-control" id="moreBtn" title="More options" aria-label="More options" aria-expanded="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/></svg>
+              <span class="sr-only">More</span>
+            </button>
+            <button class="control-btn hangup-control danger" id="hangupBtn" title="Hang up" aria-label="Leave meeting">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14c4-4 12-4 16 0l-3 3-4-2v-3h-2v3l-4 2-3-3Z"/></svg>
+              <span class="sr-only">Leave</span>
+            </button>
+          </div>
+        </section>
+
+        <aside class="chat-drawer card-white" id="chatDrawer">
+          <div class="chat-head">
+            <div>
+              <strong>Live chat</strong>
+              <small>Real-time messages with emoji support</small>
+            </div>
+            <button class="icon-only" id="chatFullscreenBtn" aria-label="Full screen chat" title="Full screen chat">
+              <svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M16 3h3a2 2 0 0 1 2 2v3"/><path d="M8 21H5a2 2 0 0 1-2-2v-3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+            </button>
+            <button class="icon-only" id="closeChatBtn" aria-label="Close chat" title="Close chat">
+              <svg viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+          </div>
+          <div class="chat-messages" id="chatMessages"></div>
+          <div class="emoji-row" id="emojiRow" hidden>
+            <button>😀</button><button>😂</button><button>😍</button><button>👍</button><button>👏</button><button>🔥</button><button>🎉</button><button>❤️</button><button>🙏</button><button>✅</button><button>💡</button><button>😎</button>
+          </div>
+          <div class="chat-input-wrap">
+            <button class="emoji-btn" id="emojiBtn" aria-label="Open emoji picker">😊</button>
+            <input id="chatInput" type="text" maxlength="500" placeholder="Type a message..." />
+            <button class="send-btn" id="sendChatBtn" aria-label="Send message">
+              <svg viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4 20-7Z"/></svg>
+            </button>
+          </div>
+        </aside>
+      </div>
+
+      <section class="device-panel card-white" id="devicePanel" hidden aria-label="Device settings">
+        <div class="device-head">
+          <div>
+            <strong>Device settings</strong>
+            <small>Switch microphone or camera connected to this device</small>
+          </div>
+          <button class="icon-only" id="closeDevicePanel" aria-label="Close device settings">
+            <svg viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+        </div>
+        <label class="device-field" for="micDeviceSelect">
+          <span>Microphone</span>
+          <select id="micDeviceSelect"></select>
+        </label>
+        <label class="device-field" for="cameraDeviceSelect">
+          <span>Camera</span>
+          <select id="cameraDeviceSelect"></select>
+        </label>
+        <button class="mini-btn refresh-devices" id="refreshDevicesBtn" type="button">
+          <svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v6h-6"/></svg>
+          Refresh devices
+        </button>
+        <p class="device-note">Browser may show device names only after mic/camera permission is allowed.</p>
+      </section>
+
+      <section class="side-panel participant-panel card-white" id="participantsPanel" hidden aria-label="Participants">
+        <div class="side-panel-head">
+          <div>
+            <strong>Participants</strong>
+            <small id="participantPanelSubtitle">Live room status</small>
+          </div>
+          <button class="icon-only" id="closeParticipantsPanel" aria-label="Close participants">
+            <svg viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+        </div>
+        <div class="participants-list" id="participantsList"></div>
+      </section>
+
+      <section class="side-panel notes-panel card-white" id="notesPanel" hidden aria-label="Meeting notes">
+        <div class="side-panel-head">
+          <div>
+            <strong>Meeting notes</strong>
+            <small>Private on this device</small>
+          </div>
+          <button class="icon-only" id="closeNotesPanel" aria-label="Close meeting notes">
+            <svg viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+        </div>
+        <textarea id="notesInput" class="notes-input" maxlength="12000" placeholder="Write private notes for this meeting..."></textarea>
+        <div class="notes-actions">
+          <button class="mini-btn" id="saveNotesBtn" type="button">Save notes</button>
+          <button class="mini-btn" id="downloadNotesBtn" type="button">Download TXT</button>
+          <button class="mini-btn danger-soft" id="clearNotesBtn" type="button">Clear notes</button>
+        </div>
+        <small class="notes-status" id="notesStatus">Notes are saved locally per room.</small>
+      </section>
+
+      <section class="more-panel card-white" id="morePanel" hidden aria-label="More options">
+        <div class="more-head">
+          <div>
+            <strong>More options</strong>
+            <small>View, people, notes and room controls</small>
+          </div>
+          <button class="icon-only" id="closeMorePanel" aria-label="Close more options">
+            <svg viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+        </div>
+
+        <div class="more-action-grid">
+          <button class="more-action-btn" id="openParticipantsBtn" type="button">
+            <span>Participant list</span>
+            <small>Names, media and raised hands</small>
+          </button>
+          <button class="more-action-btn" id="openNotesBtn" type="button">
+            <span>Meeting notes</span>
+            <small>Private notes on this device</small>
+          </button>
+          <button class="more-action-btn" id="openReactionsFromMoreBtn" type="button">
+            <span>Reactions</span>
+            <small>Send a quick reaction</small>
+          </button>
+          <button class="more-action-btn" id="openFeedbackFromMoreBtn" type="button">
+            <span>Report issue / feedback</span>
+            <small>Share feedback after the call</small>
+          </button>
+        </div>
+
+        <div class="host-controls-panel" id="hostControlsPanel" hidden>
+          <div class="section-title-row">
+            <strong>Host controls</strong>
+            <small>Only visible to the host</small>
+          </div>
+          <button class="host-control-btn" id="lockMeetingBtn" type="button">Lock meeting</button>
+          <button class="host-control-btn" id="toggleChatHostBtn" type="button">Disable chat</button>
+          <button class="host-control-btn" id="toggleGuestScreenShareBtn" type="button">Disable guest screen sharing</button>
+          <button class="host-control-btn danger-soft" id="endForEveryoneBtn" type="button">End meeting for everyone</button>
+        </div>
+
+        <div class="section-title-row">
+          <strong>Adjust view</strong>
+          <small>Selection is saved for future meetings</small>
+        </div>
+
+        <div class="view-mode-list" role="group" aria-label="View mode">
+          <button class="view-mode-option" data-view-mode="auto" type="button" aria-pressed="true">
+            <span>Auto (dynamic)</span>
+            <small>Best fit for the current call</small>
+          </button>
+          <button class="view-mode-option" data-view-mode="tiled" type="button" aria-pressed="false">
+            <span>Tiled (legacy)</span>
+            <small>Equal-size participant grid</small>
+          </button>
+          <button class="view-mode-option" data-view-mode="spotlight" type="button" aria-pressed="false">
+            <span>Spotlight</span>
+            <small>Main focus with smaller tiles</small>
+          </button>
+          <button class="view-mode-option" data-view-mode="sidebar" type="button" aria-pressed="false">
+            <span>Sidebar</span>
+            <small>Focus area and side previews</small>
+          </button>
+        </div>
+
+        <label class="range-field" for="maxTilesRange">
+          <span>Maximum tiles <b id="maxTilesValue">3</b></span>
+          <input id="maxTilesRange" type="range" min="1" max="3" step="1" value="3" />
+        </label>
+
+        <label class="switch-field" for="hideNoVideoToggle">
+          <span>
+            <strong>Hide tiles without video</strong>
+            <small>Keeps the stage focused on live video</small>
+          </span>
+          <input id="hideNoVideoToggle" type="checkbox" />
+        </label>
+      </section>
+    </section>
+  </main>
+
+
+  <div class="modal-backdrop" id="meetingEndedModal" hidden>
+    <div class="feedback-modal card-white" role="dialog" aria-modal="true" aria-labelledby="feedbackModalTitle">
+      <button class="modal-close" id="closeMeetingEndedModal" type="button" aria-label="Close message">
+        <svg viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+      <div class="feedback-logo-wrap">
+        <img src="assets/logo.png" alt="Akaora Meet logo" class="feedback-logo" />
+      </div>
+      <p class="feedback-eyebrow">Meeting Ended</p>
+      <h3 id="feedbackModalTitle">Thanks for using Akaora Meet</h3>
+      <p class="feedback-text">Your meeting has ended. If you want, you can quickly share feedback to help improve the experience.</p>
+      <div class="meeting-summary-block" id="meetingSummaryBlock" hidden>
+        <div class="meeting-summary-list" id="meetingSummaryList"></div>
+        <button class="mini-btn" id="copySummaryBtn" type="button">Copy summary</button>
+      </div>
+      <div class="feedback-rating" id="feedbackRating" aria-label="Rate your meeting experience">
+        <button type="button" class="rating-btn" data-rating="1" aria-label="Rate 1 out of 5">★</button>
+        <button type="button" class="rating-btn" data-rating="2" aria-label="Rate 2 out of 5">★</button>
+        <button type="button" class="rating-btn" data-rating="3" aria-label="Rate 3 out of 5">★</button>
+        <button type="button" class="rating-btn" data-rating="4" aria-label="Rate 4 out of 5">★</button>
+        <button type="button" class="rating-btn" data-rating="5" aria-label="Rate 5 out of 5">★</button>
+      </div>
+      <textarea id="feedbackInput" class="feedback-input" maxlength="600" placeholder="Tell us about your experience (optional)"></textarea>
+      <div class="feedback-actions">
+        <button class="mini-btn feedback-skip" id="skipFeedbackBtn" type="button">Maybe later</button>
+        <button class="primary-action feedback-submit" id="submitFeedbackBtn" type="button">
+          <svg viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4 20-7Z"/></svg>
+          Submit feedback
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-database-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="app.js?v=20260628-production-1"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "Akaora Meet",
+  "short_name": "Akaora Meet",
+  "description": "Simple, secure and instant browser meetings by Akaora.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f8fb",
+  "theme_color": "#06162a",
+  "icons": [
+    {
+      "src": "assets/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
